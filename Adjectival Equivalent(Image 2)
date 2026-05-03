@@ -1,0 +1,27 @@
+def get_pshs_grade(percent):
+    """
+    Converts a percent score to the PSHS grading equivalent.
+
+    Args:
+        percent (float): Percent score between 0 and 100.
+
+    Returns:
+        tuple: (equivalent (float), adjectival_equivalent (str))
+
+    Raises:
+        ValueError: If percent is outside the 0–100 range.
+    """
+    if not (0 <= percent <= 100):
+        raise ValueError("Percent must be between 0 and 100.")
+
+    if percent >= 96:   return 1.00, "Excellent"
+    elif percent >= 90: return 1.25, "Very Good"
+    elif percent >= 84: return 1.50, "Very Good"
+    elif percent >= 78: return 1.75, "Good"
+    elif percent >= 72: return 2.00, "Good"
+    elif percent >= 66: return 2.25, "Satisfactory"
+    elif percent >= 60: return 2.50, "Satisfactory"
+    elif percent >= 55: return 2.75, "Fair"
+    elif percent >= 50: return 3.00, "Fair"
+    elif percent >= 40: return 4.00, "Failed on Condition"
+    else:               return 5.00, "Failed"
